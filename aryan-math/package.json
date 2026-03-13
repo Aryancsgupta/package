@@ -1,5 +1,5 @@
 {
-  "name": "aryan-math",
+  "name": "aryan-math-toolkit",
   "version": "1.0.1",
   "description": "A comprehensive math library for basic to advanced calculations",
   "main": "index.js",
@@ -16,8 +16,10 @@
   "author": "Aryan",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aryancsgupta/package/tree/main/aryan-math"
+    "url": "git+https://github.com/Aryancsgupta/package.git",
+    "directory": "aryan-math"
   },
+  "homepage": "https://github.com/Aryancsgupta/package/tree/main/aryan-math",
   "license": "ISC",
   "type": "commonjs"
 }
