@@ -1,10 +1,12 @@
 {
   "name": "aryan-route-loader",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Automatically load all Express route files from a given folder and register them in an Express app.",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,15 +1,18 @@
-# aryan-route-loader
+# aryan-route-loader v2.0
 
-Automatically load all Express route files from a given folder and register them in an Express app.
+Advanced Express route loader with configuration support, recursive loading, and TypeScript support.
 
 ## Features
 
-- Reads all files inside the given folder automatically.
-- Imports each route file dynamically.
-- Automatically registers the routes using `app.use()`.
-- Ignores non-JS files automatically.
-- Logs loaded routes to the console for easy debugging.
-- Handles errors gracefully if the given folder does not exist.
+- ✅ **Configuration Object**: Flexible options for customization
+- ✅ **Multiple Extensions**: Support for `.js`, `.mjs`, `.cjs`, `.ts` files
+- ✅ **Recursive Loading**: Load routes from nested directories
+- ✅ **Route Prefixing**: Add base paths to all routes
+- ✅ **Async Support**: Non-blocking file operations via async/await
+- ✅ **Custom Logging**: Configurable logging with custom loggers
+- ✅ **TypeScript Support**: Full type definitions included
+- ✅ **Error Handling**: Robust error handling and validation
+- ✅ **Backward Compatible**: Works with existing string-path codebase
 
 ## Installation
 
@@ -17,19 +20,7 @@ Automatically load all Express route files from a given folder and register them
 npm install aryan-route-loader
 ```
 
-## Example Usage
-
-### 1. File Structure
-
-```text
-my-app/
-├── routes/
-│   ├── users.js
-│   └── posts.js
-├── app.js
-```
-
-### 2. Set up your Express Application (`app.js`)
+## Basic Usage
 
 ```javascript
 const express = require("express");
@@ -37,25 +28,35 @@ const autoRoutes = require("aryan-route-loader");
 
 const app = express();
 
-// Automatically load and register all routes in the "routes" folder
-autoRoutes(app, "./routes");
+// Await loading the routes
+(async () => {
+  await autoRoutes(app, "./routes");
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+  app.listen(3000, () => console.log("Server running"));
+})();
+```
+
+## Advanced Configuration Object
+
+You can configure advanced features like recursive routing, extensions, and custom loggers!
+
+```javascript
+await autoRoutes(app, {
+  dir: "./routes",
+  recursive: true,           // Loads from nested directories (like "routes/api/v1")
+  prefix: "/api",            // Adds a base path to all routes
+  extensions: [".js", ".ts"],// Only loads specific extensions
+  logger: (msg) => console.log(`[MY-APP] ${msg}`), // Custom Logging function
+  ignoreErrors: false        // Don't crash if a route fails to load
 });
 ```
 
-### 3. Creating Route Files (`routes/users.js`)
+### Route Prefixing behavior:
+If you enable `recursive: true` and have a folder like `./routes/users`, its routes will be prefixed properly according to folder structure. If you give `prefix: "/api"`, those routes become accessible at `/api/users/`. 
 
-Each route file should export an Express Router.
-
+## Backward Compatible
+Older configuration API format is fully supported!
 ```javascript
-const express = require("express");
-const router = express.Router();
-
-router.get("/users", (req, res) => {
-    res.json({ message: "Users API is working!" });
-});
-
-module.exports = router;
+// Also valid:
+await autoRoutes(app, "./routes", { recursive: true });
 ```
