@@ -1,11 +1,11 @@
-# aryan-math
+# aryan-math-toolkit
 
 A comprehensive math library for basic to advanced calculations. Includes modules for Arithmetic, Calculus, Conic Sections, Geometry, Linear Algebra, Logarithms, Number Theory, Random, Rounding, Statistics, and Trigonometry!
 
 ## Installation
 
 ```bash
-npm install aryan-math
+npm install aryan-math-toolkit
 ```
 
 ## Features
