@@ -27,7 +27,7 @@ npm install aryan-math-toolkit
 ## Usage Examples
 
 ```javascript
-const math = require("aryan-math");
+const math = require("aryan-math-toolkit");
 ```
 
 ---
