@@ -44,7 +44,6 @@ math.power(2, 10)     // 1024
 math.sqrt(144)        // 12
 math.cbrt(27)         // 3
 math.abs(-99)         // 99
-math.fibonacci(5)          // 120
 math.sign(-5)         // -1  (positive → 1, zero → 0, negative → -1)
 ```
 
