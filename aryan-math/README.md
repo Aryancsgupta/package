@@ -9,7 +9,7 @@ npm install aryan-math-toolkit
 ```
 
 ## Features
-- **Arithmetic** – add, sub, mul, div, mod, power, sqrt, cbrt, abs, sign
+- **Arithmetic** – add, sub, mul, div, mod, power, sqrt, cbrt, abs, sign, fibonacci
 - **Calculus** – derivative, integrate
 - **Conic Sections** – circle, parabola, ellipse, hyperbola
 - **Geometry** – Areas, Perimeters, Volumes, Surface Areas
@@ -44,6 +44,7 @@ math.power(2, 10)     // 1024
 math.sqrt(144)        // 12
 math.cbrt(27)         // 3
 math.abs(-99)         // 99
+math.fibonacci(5)          // 120
 math.sign(-5)         // -1  (positive → 1, zero → 0, negative → -1)
 ```
 
