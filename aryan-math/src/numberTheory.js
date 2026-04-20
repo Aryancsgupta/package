@@ -23,10 +23,13 @@ function digitSum(n){
  return n.toString().split("").reduce((a,b)=>a+ +b,0)
 }
 
-function fibonacci(n){
- if(n<=1) return n
- return fibonacci(n-1)+fibonacci(n-2)
+function fibonacci(n) {
+  if (n <= 1) return n;
+  let [a, b] = [0, 1];
+  for (let i = 2; i <= n; i++) [a, b] = [b, a + b];
+  return b;
 }
+
 
 function primeCheck(n){
  for(let i=2;i<=Math.sqrt(n);i++){
