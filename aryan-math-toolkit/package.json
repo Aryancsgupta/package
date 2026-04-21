@@ -1,0 +1,25 @@
+{
+  "name": "aryan-math-toolkit",
+  "version": "1.0.7",
+  "description": "A comprehensive math library for basic to advanced calculations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "math",
+    "calculus",
+    "geometry",
+    "algebra",
+    "statistics"
+  ],
+  "author": "Aryan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aryancsgupta/package.git",
+    "directory": "aryan-math"
+  },
+  "homepage": "https://github.com/Aryancsgupta/package/tree/main/aryan-math",
+  "license": "ISC",
+  "type": "commonjs"
+}
