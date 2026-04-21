@@ -19,7 +19,7 @@ function vectorSub(a,b){
 
 function dotProduct(a,b){
  let sum = 0
-
+ if (a.length !== b.length) throw new Error("Vectors must be the same length");
  for(let i=0;i<a.length;i++){
   sum += a[i] * b[i]
  }
@@ -37,17 +37,19 @@ function vectorMagnitude(v){
 
 // Vector Normalize
 
-function vectorNormalize(v){
- let mag = vectorMagnitude(v)
- return v.map(x=>x/mag)
+function vectorNormalize(v) {
+  let mag = vectorMagnitude(v);
+  if (mag === 0) throw new Error("Cannot normalize a zero vector");
+  return v.map(x => x / mag);
 }
-
 
 // Matrix Addition
 
 function matrixAdd(A,B){
- return A.map((row,i)=>
-  row.map((val,j)=>val + B[i][j])
+    if (A[0].length !== B.length)
+        throw new Error("Matrix A columns must equal Matrix B rows");
+    return A.map((row,i)=>
+    row.map((val,j)=>val + B[i][j])
  )
 }
 
@@ -100,8 +102,9 @@ function matrixTranspose(A){
 // 2x2 Determinant
 
 function matrixDeterminant2(A){
-
- return A[0][0]*A[1][1] - A[0][1]*A[1][0]
+    if (A.length !== 2 || A[0].length !== 2)
+        throw new Error("matrixDeterminant2 requires a 2x2 matrix");
+    return A[0][0]*A[1][1] - A[0][1]*A[1][0]
 }
 
 module.exports = {
