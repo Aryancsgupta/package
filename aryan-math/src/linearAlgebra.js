@@ -1,6 +1,7 @@
 // Vector Addition
 
 function vectorAdd(a,b){
+    if (a.length !== b.length) throw new Error("Vectors must be the same length");
  return a.map((v,i)=>v + b[i])
 }
 
@@ -8,6 +9,8 @@ function vectorAdd(a,b){
 // Vector Subtraction
 
 function vectorSub(a,b){
+    if (a.length !== b.length) throw new Error("Vectors must be the same length");
+
  return a.map((v,i)=>v - b[i])
 }
 

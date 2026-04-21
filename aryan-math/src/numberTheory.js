@@ -1,7 +1,9 @@
-function factorial(n){
- let res=1
- for(let i=2;i<=n;i++) res*=i
- return res
+function factorial(n) {
+  if (n < 0 || !Number.isInteger(n)) 
+    throw new Error("factorial requires a non-negative integer");
+  let res = 1;
+  for (let i = 2; i <= n; i++) res *= i;
+  return res;
 }
 
 function gcd(a,b){

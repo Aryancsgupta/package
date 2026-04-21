@@ -1,21 +1,19 @@
 function mean(arr){
- return arr.reduce((a,b)=>a+b,0)/arr.length
+    if (!arr || arr.length === 0) throw new Error("Array cannot be empty");
+    return arr.reduce((a,b)=>a+b,0)/arr.length
 }
 
 function median(arr){
+    if (!arr || arr.length === 0) throw new Error("Array cannot be empty");
  arr=[...arr].sort((a,b)=>a-b)
  let n=arr.length
  return n%2?arr[Math.floor(n/2)]:(arr[n/2-1]+arr[n/2])/2
 }
 
-function mode(arr){
- let f={}
- let max=0,res=null
- for(let n of arr){
-  f[n]=(f[n]||0)+1
-  if(f[n]>max){max=f[n];res=n}
- }
- return res
+function mode(arr) {
+  let f = {}, max = 0;
+  for (let n of arr) { f[n] = (f[n] || 0) + 1; max = Math.max(max, f[n]); }
+  return Object.keys(f).filter(k => f[k] === max).map(Number);
 }
 
 function variance(arr){
