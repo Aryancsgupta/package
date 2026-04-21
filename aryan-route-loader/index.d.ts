@@ -60,4 +60,4 @@ declare function autoRoutes(
 ): Promise<void>;
 
 export default autoRoutes;
-export = autoRoutes;
+
