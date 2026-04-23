@@ -15,10 +15,11 @@ function randomChoice(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function randomArray(n){
- return Array.from({length:n},()=>Math.random())
+function randomArray(n) {
+  if (n < 0 || !Number.isInteger(n))
+    throw new Error("n must be a non-negative integer");
+  return Array.from({ length: n }, () => Math.random());
 }
-
 module.exports={
  random,randomInt,randomFloat,randomChoice,randomArray
 }

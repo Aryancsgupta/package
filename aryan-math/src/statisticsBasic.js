@@ -11,6 +11,7 @@ function median(arr){
 }
 
 function mode(arr) {
+   if (!arr || arr.length === 0) throw new Error("Array cannot be empty");
   let f = {}, max = 0;
   for (let n of arr) { f[n] = (f[n] || 0) + 1; max = Math.max(max, f[n]); }
   return Object.keys(f).filter(k => f[k] === max).map(Number);

@@ -26,6 +26,8 @@ function digitSum(n){
 }
 
 function fibonacci(n) {
+  if (n < 0 || !Number.isInteger(n))
+    throw new Error("fibonacci requires a non-negative integer");
   if (n <= 1) return n;
   let [a, b] = [0, 1];
   for (let i = 2; i <= n; i++) [a, b] = [b, a + b];

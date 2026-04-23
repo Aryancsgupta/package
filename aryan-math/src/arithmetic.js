@@ -6,7 +6,11 @@ function div(a, b) {
   return a / b;
 }
 function mod(a, b) { return ((a % b) + b) % b; }
-function power(a,b){ return Math.pow(a,b) }
+function power(a, b) {
+  if (a < 0 && !Number.isInteger(b))
+    throw new Error("Fractional power of a negative number is not real");
+  return Math.pow(a, b);
+}
 function sqrt(a) {
   if (a < 0) throw new Error("sqrt input must be non-negative");
   return Math.sqrt(a);

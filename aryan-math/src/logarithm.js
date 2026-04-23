@@ -12,7 +12,10 @@ function log2(x) {
 }
 function exp(x){ return Math.exp(x) }
 function expm1(x){ return Math.expm1(x) }
-function log1p(x){ return Math.log1p(x) }
+function log1p(x) {
+  if (x <= -1) throw new Error("log1p input must be greater than -1");
+  return Math.log1p(x);
+}
 
 module.exports={
  log,log10,log2,exp,expm1,log1p
